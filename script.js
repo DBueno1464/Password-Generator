@@ -8,10 +8,10 @@ function generatePassword() {
   var userlength = Number(prompt("How long should the password be? Enter a number between 8-125."));
 
   // User criteria
-  var lower = prompt("Would you like top include LOWERCASE characters? (YES or NO)");
-  //var upper = prompt("Would you like top include UPPERCASE characters? (YES or NO)");
-  //var num = prompt("Would you like top include NUMERIC characters? (YES or NO)");
-  //var special = prompt("Would you like top include SPECIAL characters? (YES or NO)");
+  var lower = confirm("Would you like top include LOWERCASE characters? (YES or NO)");
+  var upper = confirm("Would you like top include UPPERCASE characters? (YES or NO)");
+  var num = confirm("Would you like top include NUMERIC characters? (YES or NO)");
+  var special = confirm("Would you like top include SPECIAL characters? (YES or NO)");
 
   // determine which criteria to apply
 
@@ -22,23 +22,23 @@ function generatePassword() {
 
   let usableChar = "";
   
-  if (lower.toLowerCase == "yes"){
+  if (lower === true){
       usableChar.concat(lowerChar);
   }
-  console.log(usableChar);
+  usableChar += lowerChar;
 
-  /*if (upper.toLowerCase === "yes"){
-    usableChar = usableChar.concat(upperChar);
+  if (upper === true){
+    usableChar += upperChar;
   }
 
-  if (num.toLowerCase === "yes"){
-    usableChar = usableChar.concat(numChar);
+  if (num === true){
+    usableChar += numChar;
   }
 
-  if (special.toLowerCase === "yes"){
-    usableChar = usableChar.concat(specialChar);
+  if (special === true){
+    usableChar += specialChar;
   }
-*/
+
   var usableLength = usableChar.length;
   let password = "";
 
