@@ -7,6 +7,14 @@ function generatePassword() {
   // Length of the password
   var userlength = Number(prompt("How long should the password be? Enter a number between 8-125."));
 
+  if (userlength < 8){
+    alert("Please don't input less than 8, I have a quota to meet. :)");
+    return;
+  } else if (userlength > 128){
+    alert("Are you insane?!?! Paper is not cheap! Please input a number less than 128. Sheesh...");
+    return;
+  }
+
   // User criteria
   var lower = confirm("Would you like top include LOWERCASE characters? (YES or NO)");
   var upper = confirm("Would you like top include UPPERCASE characters? (YES or NO)");
@@ -23,9 +31,8 @@ function generatePassword() {
   let usableChar = "";
   
   if (lower === true){
-      usableChar.concat(lowerChar);
+    usableChar += lowerChar;
   }
-  usableChar += lowerChar;
 
   if (upper === true){
     usableChar += upperChar;
@@ -39,6 +46,13 @@ function generatePassword() {
     usableChar += specialChar;
   }
 
+  if (lower){
+   }else if (upper){
+   }else if (num){
+   }else if (special){
+   }else { alert(":( You need to choose at least one criteria :(")
+    return;}
+
   var usableLength = usableChar.length;
   let password = "";
 
@@ -48,14 +62,5 @@ function generatePassword() {
 
   document.querySelector("#password").textContent = password;
 }
-/*
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-}
-*/
-// Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
