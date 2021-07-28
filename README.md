@@ -15,3 +15,4 @@ https://dbueno1464.github.io/Password-Generator/
 https://github.com/DBueno1464/Password-Generator
 
 ## Screenshot:
+https://github.com/DBueno1464/Password-Generator/issues/1#issue-954472098
